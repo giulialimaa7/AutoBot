@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "CAP-TOOLS",
+  "version": "1.0",
+  "description": "Ferramenta de utilidades para o CAP",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "clipboardRead",
+    "tabs",
+    "windows"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Ler arquivo XML e preencher os campos do CAP"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ]
+}

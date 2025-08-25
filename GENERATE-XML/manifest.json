@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "GENERATE-XML",
+  "version": "1.0",
+  "description": "Extensão para coletar dados da Enel e gerar XML",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "downloads"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Gerar arquivo XML"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ]
+}
